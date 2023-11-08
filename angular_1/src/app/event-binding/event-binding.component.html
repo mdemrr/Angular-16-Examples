@@ -1,0 +1,16 @@
+<p>event-binding works!</p>
+<input type="button" value="Tıkla" (click)="btnClick();" />
+<p>Kullanabilmek için FormsModule eklemek gerekiyor</p>
+<input type="text" class="t" [(ngModel)]="name" />
+<p>{{name}}</p>
+
+<input
+  type="text"
+  class="t"
+  [(ngModel)]="name2"
+  (ngModelChange)="onChange($event);"
+/>
+<p>{{textLength}}</p>
+
+<input type="text" #txtExample (change)="txtExample.value" />
+<p>{{txtExample.value }}</p>

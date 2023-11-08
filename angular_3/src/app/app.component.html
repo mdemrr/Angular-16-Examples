@@ -1,0 +1,28 @@
+<!-- <form #frm="ngForm" (ngSubmit)="onSubmit(frm.value)">
+  <input type="text" name="name" placeholder="Name" ngModel />
+  <input type="text" name="surname" placeholder="Surname" ngModel />
+  <input type="text" name="email" placeholder="Email" ngModel />
+  <input type="text" name="tel" placeholder="Tel" ngModel />
+  <button>Send</button>
+</form> -->
+
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name" placeholder="Name" /><br />
+  <div *ngIf="!name.valid && (name.dirty || name.touched)">
+    {{ name.errors | json }}
+  </div>
+  <input type="text" formControlName="surname" placeholder="Surname" /><br />
+  <div *ngIf="!surname.valid && (surname.dirty || surname.touched)">
+    {{ name.errors | json }}
+  </div>
+  <input type="text" formControlName="email" placeholder="Email" /><br />
+  <div *ngIf="!email.valid && (email.dirty || email.touched)">
+    {{ name.errors | json }}
+  </div>
+  <input type="text" formControlName="tel" placeholder="Tel" /><br />
+  <div *ngIf="!tel.valid && (tel.dirty || tel.touched)">
+    {{ name.errors | json }}
+  </div>
+  <button>Send</button>
+</form>
+Valid: {{ frm.valid }}

@@ -1,0 +1,53 @@
+<p>*ngFor ile Array içinde dönmek ve index'e erişmek</p>
+<ul>
+  <li
+    *ngFor="let name of names;
+        let i = index;
+        let o = odd;
+        let e = even;
+        let f = first;
+        let l = last;"
+  >
+    <h3>{{name}} index:{{i}} odd:{{o}} even:{{e}} first:{{f}} last:{{l}}</h3>
+  </li>
+</ul>
+<p>*ngIf ile koşullu gösterim yapabiliriz</p>
+<h3 *ngIf="isVisible; else otherPanel">true ise 1. Panel Görünür</h3>
+<ng-template #otherPanel>
+  <h3>false ise 2. Panel Görünür</h3>
+</ng-template>
+
+<p>[ngSwitch] kullanarak switch case mantığıyla işlemler yaptırabiliriz</p>
+<div [ngSwitch]="isVisible">
+  <div *ngSwitchCase="true">True ise burası</div>
+  <div *ngSwitchCase="false">False ise burası</div>
+  <div *ngSwitchDefault="">Hiçbiri</div>
+  <div>Kullandığımız değişken türüne göre koşulları çoğaltabiliriz</div>
+</div>
+
+<p>[ngClass] ile bir nesneye css class atayabiliriz.</p>
+<div [ngClass]="myClass">
+  Örneğin bu yazıya rengi kırmızı yapan color-red class'ını atadık ve bunu
+  myClass değişkeninden çektik.
+</div>
+
+<p>[ngStyle] style vermeye yarar</p>
+<div [ngStyle]="myStyle">
+  Görüldüğü gibi ts'e yazdığımız stil elemente yansımış durumda.
+</div>
+
+<p>[(ngModel)] ise elemente kullanılmak üzere bir model atar</p>
+<input
+  type="checkbox"
+  id="c"
+  #c
+  value="{{isVisible}}"
+  [(ngModel)]="isVisible"
+/>
+<label for="c">{{c.value}}</label>
+
+<p>Custom Directive Kullanımı ile elemente erişip manipüle edebiliyoruz.</p>
+
+<div appExample color="red">Ayrıca her yerde kırmızı oluyor</div>
+
+<div *appCustomIf="false">Custom If ile Structural Directive yazmak.</div>

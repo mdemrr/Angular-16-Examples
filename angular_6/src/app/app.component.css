@@ -1,0 +1,21 @@
+a {
+    padding:5px ;
+    margin: 5px;
+    color:black;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+.active-menu
+{
+    color:white;
+    background-color: purple;
+}
+.appbar{
+    padding:10px;
+
+}
+.content{
+    padding: 10px;
+}
